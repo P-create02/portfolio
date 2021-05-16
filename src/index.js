@@ -10,6 +10,7 @@ import Contact from './pages/Contact'
 import Projects from './pages/Projects'
 import Error from './pages/Error'
 import {AppProvider} from './context'
+import "aos/dist/aos.css"
 
 ReactDOM.render(
   <React.StrictMode>

@@ -4,6 +4,7 @@ import {
   FaGithubSquare,
   FaLinkedin,
 } from "react-icons/fa"
+import {ImProfile} from "react-icons/im"
 
 const data = [
   {
@@ -19,7 +20,12 @@ const data = [
   {
     id: 3,
     icon: <FaLinkedin className="social-icon" />,
-    url: "https://pl.linkedin.com/",
+    url: "https://www.linkedin.com/in/wojciech-sikora-a81013212/",
+  },
+  {
+    id: 4,
+    icon: <ImProfile className="social-icon" />,
+    url: "#",
   },
 ]
 

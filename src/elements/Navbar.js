@@ -5,12 +5,22 @@ import logo from '../images/logo.svg'
 import Links from "../data/links"
 import { Link } from 'react-router-dom'
 import { useNavContext } from "../context"
+import { motion } from 'framer-motion'
+import AOS from 'aos'
 
 function Navbar() {
   const { openSidebar } = useNavContext()
+
+  React.useEffect(() => {
+    AOS.init()
+    AOS.refresh()
+  }, [])
+
   return (
     <Wrapper>
-      <div className="nav-center">
+      <motion.div className="nav-center"
+      initial={{y: -200}} animate={{y: 0}}
+      >
         <div className="nav-header">
           <Link to='/'>
             <img src={logo} alt="logo" />  
@@ -27,8 +37,9 @@ function Navbar() {
               </Link>
             )
           })}
+          <a href="#" target='_blank' rel="noreferrer">CV</a>
         </div>
-      </div>
+      </motion.div>
     </Wrapper>
   )
 }
@@ -42,7 +53,7 @@ const Wrapper = styled.nav`
   display: flex;
   align-items: center;
   z-index: 200;
-  background: var(--clr-white);
+  background: #222;
   .nav-center {
     width: 90vw;
     max-width: 1170px;
@@ -52,6 +63,7 @@ const Wrapper = styled.nav`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-style: none;
     img {
       margin-bottom: 0.375rem;
     }
@@ -80,7 +92,7 @@ const Wrapper = styled.nav`
       a {
         margin-right: 2rem;
         text-transform: capitalize;
-        color: var(--clr-grey-1);
+        color: var(--clr-white);
         font-weight: bold;
         letter-spacing: var(--spacing);
         transition: var(--transition);
