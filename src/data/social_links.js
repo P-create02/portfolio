@@ -5,6 +5,7 @@ import {
   FaLinkedin,
 } from "react-icons/fa"
 import {ImProfile} from "react-icons/im"
+import CVSrc from "../images/WojciechSikoraCV.pdf"
 
 const data = [
   {
@@ -25,7 +26,7 @@ const data = [
   {
     id: 4,
     icon: <ImProfile className="social-icon" />,
-    url: "#",
+    url: CVSrc,
   },
 ]
 

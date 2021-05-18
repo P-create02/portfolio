@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom'
 import { useNavContext } from "../context"
 import { motion } from 'framer-motion'
 import AOS from 'aos'
+import CVSrc from "../images/WojciechSikoraCV.pdf"
 
 function Navbar() {
   const { openSidebar } = useNavContext()
@@ -37,7 +38,7 @@ function Navbar() {
               </Link>
             )
           })}
-          <a href="#" target='_blank' rel="noreferrer">CV</a>
+          <a href={CVSrc} target='_blank' rel="noreferrer">CV</a>
         </div>
       </motion.div>
     </Wrapper>
