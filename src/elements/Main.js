@@ -42,7 +42,7 @@ export default function Main() {
                     <div className="text">
                         <motion.h1 initial={{x: '-100vw'}} animate={{x: 0}}  transition={{duration: 1.5}}>WOJCIECH SIKORA</motion.h1>
                         <motion.h3 initial={{x: '100vw'}} animate={{x: 0}}  transition={{duration: 1.5}}>FrontEnd Developer</motion.h3>
-                        <motion.h4 initial={{x: '-100vw'}} animate={{x: 0}}  transition={{duration: 1.5}} className='desc'>I create <span className="typing">{`${words[count].substring(0, index)}`}</span></motion.h4>
+                        <motion.h4 initial={{x: '-100vw'}} animate={{x: 0}}  transition={{duration: 1.5}} className='desc'>-<span className="typing">{`${words[count].substring(0, index)}`}</span></motion.h4>
                     </div>
             </motion.div>
             <motion.img src={logoback} alt="back" className='thirdOne aside' initial={{opacity: 0}} animate={{opacity: 1}} transition={{duration: 1}} />
@@ -60,10 +60,10 @@ const Wrapper = styled.section`
         transform: rotate(0deg);
     }
     50%{
-        transform: rotate(180deg) scale(1.25);
+        transform: rotate(180deg) scale(0.75);
     }
     100% {
-        transform: rotate(0deg);
+        transform: rotate(0deg) scale(1);
     }
     }
     .secondOne{
@@ -132,7 +132,7 @@ const Wrapper = styled.section`
         }
         h1{
             font-weight: bold;
-            font-size: 7rem;
+            font-size: 6rem;
             color: var(--clr-primary-8);
             @media (max-width: 768px){font-size: 4rem;}
             @media (max-width: 410px){font-size: 3rem;}
@@ -144,5 +144,6 @@ const Wrapper = styled.section`
     }
     @media (max-width: 1200px){
         .aside{display: none;}
+        .mainOne{width: 50vw;}
     }
 `

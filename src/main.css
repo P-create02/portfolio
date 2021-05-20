@@ -383,6 +383,7 @@ p {
   text-align: center;
   display: grid;
   place-items: center;
+  padding-top: 2rem;
 }
 .footer h4 {
   margin-top: 0.5rem;
