@@ -1,48 +1,48 @@
-import React from 'react';
-import styled from 'styled-components'
-import { FaAlignRight } from "react-icons/fa"
-import logo from '../images/logo.svg'
-import Links from "../data/links"
-import { Link } from 'react-router-dom'
-import { useNavContext } from "../context"
-import { motion } from 'framer-motion'
-import AOS from 'aos'
-import CVSrc from "../images/WojciechSikoraCV.pdf"
+import React from "react";
+import styled from "styled-components";
+import { FaAlignRight } from "react-icons/fa";
+import logo from "../images/logo.svg";
+import Links from "../data/links";
+import { Link } from "react-router-dom";
+import { useNavContext } from "../context";
+import { motion } from "framer-motion";
+import AOS from "aos";
 
 function Navbar() {
-  const { openSidebar } = useNavContext()
+  const { openSidebar } = useNavContext();
 
   React.useEffect(() => {
-    AOS.init()
-    AOS.refresh()
-  }, [])
+    AOS.init();
+    AOS.refresh();
+  }, []);
 
   return (
     <Wrapper>
-      <motion.div className="nav-center"
-      initial={{y: -200}} animate={{y: 0}}
+      <motion.div
+        className="nav-center"
+        initial={{ y: -200 }}
+        animate={{ y: 0 }}
       >
         <div className="nav-header">
-          <Link to='/'>
-            <img src={logo} alt="logo" />  
+          <Link to="/">
+            <img src={logo} alt="logo" />
           </Link>
           <button type="button" className="toggle-btn" onClick={openSidebar}>
             <FaAlignRight />
           </button>
         </div>
         <div className="nav-links">
-          {Links.map(link => {
+          {Links.map((link) => {
             return (
               <Link key={link.id} to={link.url}>
                 {link.text}
               </Link>
-            )
+            );
           })}
-          <a href={CVSrc} target='_blank' rel="noreferrer">CV</a>
         </div>
       </motion.div>
     </Wrapper>
-  )
+  );
 }
 
 const Wrapper = styled.nav`
@@ -77,8 +77,8 @@ const Wrapper = styled.nav`
     cursor: pointer;
     transition: var(--transition);
     &:hover {
-    color: var(--clr-primary-2);
-  }
+      color: var(--clr-primary-2);
+    }
   }
   .nav-links {
     display: none;
@@ -115,6 +115,6 @@ const Wrapper = styled.nav`
       background: transparent;
     }
   }
-`
+`;
 
 export default Navbar;

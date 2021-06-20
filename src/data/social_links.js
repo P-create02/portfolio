@@ -1,11 +1,5 @@
-import React from "react"
-import {
-  FaFacebookSquare,
-  FaGithubSquare,
-  FaLinkedin,
-} from "react-icons/fa"
-import {ImProfile} from "react-icons/im"
-import CVSrc from "../images/WojciechSikoraCV.pdf"
+import React from "react";
+import { FaFacebookSquare, FaGithubSquare, FaLinkedin } from "react-icons/fa";
 
 const data = [
   {
@@ -23,11 +17,6 @@ const data = [
     icon: <FaLinkedin className="social-icon" />,
     url: "https://www.linkedin.com/in/wojciech-sikora-a81013212/",
   },
-  {
-    id: 4,
-    icon: <ImProfile className="social-icon" />,
-    url: CVSrc,
-  },
-]
+];
 
-export default data
+export default data;
